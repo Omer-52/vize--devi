@@ -5,11 +5,66 @@
     width: 100%;
     height: 100%;
     object-fit: cover; 
+    filter: blur(5px); 
     opacity: 0; 
     transition: opacity 1.5s ease-in-out; 
 }
+
 .background-slideshow img.active {
     opacity: 1; 
+}
+
+
+.hero {
+    position: relative; 
+    height: 100vh;
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    overflow: hidden; 
+    text-align: center; 
+    padding: 0; 
+}
+
+.content-overlay {
+    position: relative; 
+    z-index: 1;
+    color: #ffffff; 
+    padding: 40px; 
+    background-color: rgba(0, 0, 0, 0.6); 
+    border-radius: 15px;
+    max-width: 90%; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7); 
+}
+
+.content-overlay h1 {
+    font-size: 3.5rem; 
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); 
+}
+
+
+section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 50px;
+}
+
+
+.hero {
+    padding: 0;
+}
+
+
+.contact h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 body {
@@ -19,6 +74,11 @@ body {
     margin: 0;
     line-height: 1.6;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
 
 
 header {
@@ -61,6 +121,57 @@ footer {
     padding: 20px 0;
     margin-top: 50px;
 }
+
+
+.skill-bar-container {
+    margin-top: 20px;
+}
+
+.skill-item {
+    margin-bottom: 20px;
+}
+
+.skill-name {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #ffffff; 
+}
+
+.skill-bar {
+    background-color: #333; 
+    height: 12px;
+    border-radius: 6px;
+    overflow: hidden; 
+    position: relative;
+}
+
+.skill-progress {
+    background-color: #4da6ff; 
+    height: 100%;
+    width: 0; 
+    border-radius: 6px;
+    transition: width 1.5s ease-out; 
+    position: absolute; 
+    left: 0;
+    top: 0;
+}
+
+
+.skill-progress::after {
+    content: attr(data-level) '%';
+    position: absolute;
+    right: 5px; 
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    white-space: nowrap; 
+}
+
 
 
 .kategoriler-alani {
