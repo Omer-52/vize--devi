@@ -3,23 +3,27 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentImageIndex = 0;
 
     function changeImage() {
-        // Eğer hiç resim yoksa fonksiyonu çalıştırma
-        if (images.length === 0) return;
-
         images[currentImageIndex].classList.remove('active');
-
-       
         currentImageIndex = (currentImageIndex + 1) % images.length;
-
-     
         images[currentImageIndex].classList.add('active');
     }
 
-    // Sayfa yüklendiğinde ilk resmi aktif yap (HTML'de de yapıldı ama emin olmak için)
+  
     if (images.length > 0) {
         images[0].classList.add('active');
     }
 
-    // Her 5 saniyede bir resmi değiştir (5000 milisaniye = 5 saniye)
+    
+    function animateSkillBars() {
+        const skillProgressBars = document.querySelectorAll('.skill-progress');
+        skillProgressBars.forEach(bar => {
+            const level = bar.getAttribute('data-level');
+            if (level) {
+                bar.style.width = level + '%'; 
+            }
+        });
+    }
+
+    animateSkillBars(); 
     setInterval(changeImage, 5000); 
 });

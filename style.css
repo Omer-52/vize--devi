@@ -1,9 +1,20 @@
-.background-slideshow img {
-    position: absolute;
+
+.background-slideshow {
+    position: fixed; 
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw; 
+    height: 100vh; 
+    z-index: -1; 
+    overflow: hidden; 
+}
+
+.background-slideshow img {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
     object-fit: cover; 
     filter: blur(5px); 
     opacity: 0; 
@@ -16,8 +27,7 @@
 
 
 .hero {
-    position: relative; 
-    height: 100vh;
+    height: 100vh; 
     display: flex;
     align-items: center; 
     justify-content: center; 
@@ -25,6 +35,7 @@
     text-align: center; 
     padding: 0; 
 }
+
 
 .content-overlay {
     position: relative; 
@@ -44,6 +55,13 @@
 }
 
 
+main, footer {
+    position: relative;
+    z-index: 1;
+}
+
+
+
 section {
     padding: 80px 20px;
     text-align: center;
@@ -53,11 +71,6 @@ section h2 {
     font-size: 2.5rem;
     color: #ffffff;
     margin-bottom: 50px;
-}
-
-
-.hero {
-    padding: 0;
 }
 
 
@@ -158,9 +171,8 @@ footer {
     top: 0;
 }
 
-
 .skill-progress::after {
-    content: attr(data-level) '%';
+    content: attr(data-level) '%'; 
     position: absolute;
     right: 5px; 
     top: 50%;
@@ -230,7 +242,7 @@ footer {
     color: #4da6ff; 
 }
 .content-overlay .kategori-karti li strong { 
-    color: #87ceeb; 
+    color: #76bbd6; 
 }
 
 
