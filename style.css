@@ -42,7 +42,7 @@
     z-index: 1;
     color: #ffffff; 
     padding: 40px; 
-    background-color: rgba(0, 0, 0, 0.6); 
+    background-color: var(--overlay-bg); 
     border-radius: 15px;
     max-width: 90%; 
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7); 
@@ -69,20 +69,12 @@ section {
 
 section h2 {
     font-size: 2.5rem;
-    color: #ffffff;
+    color: var(--text-color-primary); 
     margin-bottom: 50px;
 }
-
-
-.contact h2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 body {
-    background-color: #0a0a0a; 
-    color: #e0e0e0; 
+    background-color: var(--bg-color-primary); 
+    color: var(--text-color-primary); 
     font-family: 'Arial', sans-serif;
     margin: 0;
     line-height: 1.6;
@@ -95,7 +87,7 @@ html {
 
 
 header {
-    background-color: #1a1a1a;
+    background-color: var(--bg-color-secondary); 
     color: #ffffff;
     padding: 15px 0;
     position: sticky; 
@@ -117,19 +109,18 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: #ffffff;
+    color: var(--text-color-primary); 
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-    color: #4da6ff; 
+    color: var(--accent-color); 
 }
-
 footer {
-    background-color: #1a1a1a;
-    color: #cccccc;
+    background-color: var(--bg-color-secondary); 
+    color: var(--text-color-secondary); 
     text-align: center;
     padding: 20px 0;
     margin-top: 50px;
@@ -149,11 +140,11 @@ footer {
     text-align: left;
     margin-bottom: 8px;
     font-weight: bold;
-    color: #ffffff; 
+    color: var(--text-color-primary); 
 }
 
 .skill-bar {
-    background-color: #333; 
+    background-color: var(--skill-bar-bg); 
     height: 12px;
     border-radius: 6px;
     overflow: hidden; 
@@ -161,7 +152,7 @@ footer {
 }
 
 .skill-progress {
-    background-color: #4da6ff; 
+    background-color: var(--accent-color); 
     height: 100%;
     width: 0; 
     border-radius: 6px;
@@ -239,32 +230,58 @@ footer {
 
 
 .kategori-karti li strong {
-    color: #4da6ff; 
+    color: var(--accent-color); 
 }
 .content-overlay .kategori-karti li strong { 
-    color: #76bbd6; 
+    color: var(--accent-color-light); 
 }
 
 
-.contact h2 img {
-    filter: invert(1); 
-}
 
-/* İletişim bölümündeki linkler için stil */
 .contact .contact-link {
-    color: #4da6ff; /* Vurgu rengi */
-    text-decoration: none; /* Alt çizgiyi kaldır */
+    color: var(--link-color); 
+    text-decoration: none; 
     font-weight: bold;
-    transition: color 0.3s ease; /* Renk değişimi için yumuşak geçiş */
-    display: block; /* Her linki yeni bir satıra al */
-    margin-bottom: 10px; /* Linkler arasında boşluk */
-    font-size: 1.1rem; /* Biraz daha büyük font boyutu */
-    text-align: center; /* Metni ortala */
+    transition: color 0.3s ease; 
+    display: block; 
+    margin-top: 15px; 
+    font-size: 1.1rem; 
+    text-align: center;
 }
 
 .contact .contact-link:hover {
-    color: #76bbd6; /* Hover durumunda daha açık bir renk */
-    text-decoration: underline; /* Hover durumunda alt çizgi ekle */
+    color: var(--link-hover-color); 
+    text-decoration: underline; 
+}
+
+
+.contact-card {
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    align-items: center; 
+    min-height: 150px;
+    flex: 1 1 250px; 
+}
+
+
+.contact-card h2 {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    margin-bottom: 0; 
+    border-bottom: none; 
+    padding-bottom: 0; 
+    font-size: 1.5rem; 
+}
+
+
+
+.contact-card h2 img {
+    filter: var(--invert-filter);
+    width: 30px;
+    vertical-align: middle;
+    margin-right: 10px;
 }
 
 
@@ -278,12 +295,12 @@ footer {
 
 .projects h3 {
     font-size: 1.8rem;
-    color: #ffffff;
+    color: var(--text-color-primary);
     margin-top: 60px;
     margin-bottom: 30px;
     border-bottom: 1px solid #444;
     padding-bottom: 10px;
-    display: inline-block; 
+    display: inline-block;
     text-align: center;
 }
 
@@ -306,7 +323,7 @@ footer {
 }
 
 .proje-karti h3 {
-    color: #4da6ff; 
+    color: var(--accent-color); 
     font-size: 1.2rem;
     margin-bottom: 10px;
     border-bottom: none; 
@@ -322,7 +339,7 @@ footer {
 
 .proje-karti .proje-link {
     display: inline-block;
-    background-color: #4da6ff;
+    background-color: var(--accent-color); 
     color: #1a1a1a;
     padding: 10px 15px;
     border-radius: 5px;
@@ -333,5 +350,49 @@ footer {
 }
 
 .proje-karti .proje-link:hover {
-    background-color: #76bbd6;
+    background-color: var(--accent-color-light); 
+}
+
+
+.click-ripple {
+    position: fixed; 
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7); 
+    transform: scale(0); 
+    animation: ripple-animation 0.6s ease-out forwards; 
+    pointer-events: none; 
+    z-index: 9999; 
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(2); 
+        opacity: 0; 
+    }
+}
+
+
+
+#theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text-color-primary); 
+    font-size: 1.5rem;
+    cursor: pointer;
+   
+    transition: color 0.3s ease;
+    padding: 5px;
+    border-radius: 5px;
+    position: absolute;
+    right: 20px; 
+    z-index: 1001; 
+}
+
+#theme-toggle:hover {
+    color: var(--accent-color);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#theme-toggle:focus {
+    outline: none;
 }
