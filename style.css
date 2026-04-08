@@ -250,6 +250,24 @@ footer {
     filter: invert(1); 
 }
 
+/* İletişim bölümündeki linkler için stil */
+.contact .contact-link {
+    color: #4da6ff; /* Vurgu rengi */
+    text-decoration: none; /* Alt çizgiyi kaldır */
+    font-weight: bold;
+    transition: color 0.3s ease; /* Renk değişimi için yumuşak geçiş */
+    display: block; /* Her linki yeni bir satıra al */
+    margin-bottom: 10px; /* Linkler arasında boşluk */
+    font-size: 1.1rem; /* Biraz daha büyük font boyutu */
+    text-align: center; /* Metni ortala */
+}
+
+.contact .contact-link:hover {
+    color: #76bbd6; /* Hover durumunda daha açık bir renk */
+    text-decoration: underline; /* Hover durumunda alt çizgi ekle */
+}
+
+
 
 #achievements-container .kategori-karti {
     flex: 1 1 100%; 
